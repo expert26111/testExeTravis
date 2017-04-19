@@ -32,6 +32,7 @@ public class AuthenticatorTestIT extends  AuthenticatorTest{
     if (System.getenv("TRAVIS") != null) {
       return new Authenticator(new UserFacadeRealDB("pu_mySql_travis_Integration"), mailer);
     }
+    
     return new Authenticator(new UserFacadeRealDB("pu_localDB"), mailer);
 
      
