@@ -8,4 +8,9 @@ cache:
 
 script:
    - mvn verify
+   
+   services:
+   - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE usersDB;'
 
