@@ -1,16 +1,18 @@
 language: java
 jdk: oraclejdk8
 
+
 cache:
   directories:
     - node_modules
     - $HOME/.m2
 
 script:
-   - mvn verify
-   
-   services:
+    - mvn verify
+
+services:
    - mysql
+
 before_install:
   - mysql -e 'CREATE DATABASE usersDB;'
 
