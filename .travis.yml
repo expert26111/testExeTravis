@@ -14,5 +14,14 @@ services:
    - mysql
 
 before_install:
+  - npm install 
   - mysql -e 'CREATE DATABASE usersDB;'
 
+script: 
+  - mvn verify site
+
+after_success:
+  - surge --project ./target/site --domain x123.surge.sh
+after_failure:
+  #Remove documentation for a failing project
+  - surge teardown x123.surge.sh
