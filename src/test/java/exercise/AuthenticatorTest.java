@@ -20,7 +20,7 @@ public class AuthenticatorTest {
   //Override in a derived test to test with alternative Facades/Mailers
   public Authenticator makeAuthenticator(){
      Mailer mailer = mock(Mailer.class);
-     return new Authenticator(new UserFacadeRealDB("pu_localDB"), mailer);
+     return new Authenticator(new UserFacadeFake(), mailer);
   }
   
     
